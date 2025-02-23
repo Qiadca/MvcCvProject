@@ -1,0 +1,55 @@
+﻿@model MvcCv.Models.Entity.TabloPortfolyo
+
+
+@{
+    ViewBag.Title = "PortfolyoGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Portfolyo Güncelleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Deneyim ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim")
+    @Html.TextBoxFor(x => x.Resim, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim2")
+    @Html.TextBoxFor(x => x.Resim2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim3")
+    @Html.TextBoxFor(x => x.Resim3, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim4")
+    @Html.TextBoxFor(x => x.Resim4, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim5")
+    @Html.TextBoxFor(x => x.Resim5, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim6")
+    @Html.TextBoxFor(x => x.Resim6, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim7")
+    @Html.TextBoxFor(x => x.Resim7, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim8")
+    @Html.TextBoxFor(x => x.Resim8, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim9")
+    @Html.TextBoxFor(x => x.Resim9, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim10")
+    @Html.TextBoxFor(x => x.Resim10, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+
+</form>
+

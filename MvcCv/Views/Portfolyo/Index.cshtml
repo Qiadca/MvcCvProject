@@ -1,0 +1,51 @@
+﻿@using MvcCv.Models.Entity
+@model List<TabloPortfolyo>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Portfolyo Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Resim</th>
+        <th>Resim 2</th>
+        <th>Resim 3</th>
+        <th>Resim 4</th>
+        <th>Resim 5</th>
+        <th>Resim 6</th>
+        <th>Resim 7</th>
+        <th>Resim 8</th>
+        <th>Resim 9</th>
+        <th>Resim 10</th>
+        <th>Açıklama</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Baslik</td>
+            <td>@(string.IsNullOrEmpty(x.Resim) ? "" : x.Resim.Substring(0, Math.Min(10, x.Resim.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim2) ? "" : x.Resim2.Substring(0, Math.Min(10, x.Resim2.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim3) ? "" : x.Resim3.Substring(0, Math.Min(10, x.Resim3.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim4) ? "" : x.Resim4.Substring(0, Math.Min(10, x.Resim4.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim5) ? "" : x.Resim5.Substring(0, Math.Min(10, x.Resim5.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim6) ? "" : x.Resim6.Substring(0, Math.Min(10, x.Resim6.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim7) ? "" : x.Resim7.Substring(0, Math.Min(10, x.Resim7.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim8) ? "" : x.Resim8.Substring(0, Math.Min(10, x.Resim8.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim9) ? "" : x.Resim9.Substring(0, Math.Min(10, x.Resim9.Length)) + "...")</td>
+            <td>@(string.IsNullOrEmpty(x.Resim10) ? "" : x.Resim10.Substring(0, Math.Min(10, x.Resim10.Length)) + "...")</td>
+            <td>@x.Aciklama</td>
+            <td><a href="/Portfolyo/PortfolyoSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Portfolyo/PortfolyoGetir/@x.ID" class="btn btn-warning">Düzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Portfolyo/PortfolyoEkle" class="btn btn-primary">Yeni Portfolyo Ekle</a>

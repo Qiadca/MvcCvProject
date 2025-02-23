@@ -1,0 +1,57 @@
+﻿@using MvcCv.Models.Entity
+@model List<TabloPortfolyo>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Portfolyom</h2>
+    @foreach (var x in Model)
+    {
+        var carouselId = string.Format("carousel_{0}", x.ID);
+
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">@x.Baslik</h3>
+                <div id="@carouselId" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="@x.Resim" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim2" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim3" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim4" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim5" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim6" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim7" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim8" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim9" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="@x.Resim10" class="d-block w-100 rounded" alt="Fotoğraf yüklü değil">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#@carouselId" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#@carouselId" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <p>@x.Aciklama</p>
+            </div>
+        </div>
+    }
+</div>
